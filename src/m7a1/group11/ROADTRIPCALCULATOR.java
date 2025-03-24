@@ -33,8 +33,11 @@ public class ROADTRIPCALCULATOR extends javax.swing.JFrame {
         total_txt.setText(stringedTotalPrice);
     }
     
-    public static void travelTime() {
-        ;
+    public static void travelTime(double distance) {
+        double timeInHours = distance / 55;
+        double timeInMinutes = (double) (timeInHours * 60);
+        travel_time.setText(String.valueOf(timeInMinutes));
+        
     }
 
     /**
@@ -166,6 +169,7 @@ public class ROADTRIPCALCULATOR extends javax.swing.JFrame {
         double totalprice = Double.valueOf(total_txt.getText());
         
         fuelcostComputation(mileage, fuelcost, distance, totalprice);
+        travelTime(distance);
     }//GEN-LAST:event_compute_btnActionPerformed
 
     private void CLEARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLEARActionPerformed
