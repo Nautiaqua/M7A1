@@ -18,7 +18,7 @@ public class ROADTRIPCALCULATOR extends javax.swing.JFrame {
         
     }
     
-    public static void mileageComputation(double mileage, double fuelcost, double distance, double totalprice) {
+    public static void fuelcostComputation(double mileage, double fuelcost, double distance, double totalprice) {
         System.out.println("PLACEHOLDER");
         
         System.out.println(mileage);
@@ -31,6 +31,10 @@ public class ROADTRIPCALCULATOR extends javax.swing.JFrame {
         totalprice = totalprice + priceOfGasUsed;
         String stringedTotalPrice = Double.toString(totalprice);
         total_txt.setText(stringedTotalPrice);
+    }
+    
+    public static void travelTime() {
+        ;
     }
 
     /**
@@ -161,7 +165,7 @@ public class ROADTRIPCALCULATOR extends javax.swing.JFrame {
         double distance = Double.valueOf(distance_txt.getText());
         double totalprice = Double.valueOf(total_txt.getText());
         
-        mileageComputation(mileage, fuelcost, distance, totalprice);
+        fuelcostComputation(mileage, fuelcost, distance, totalprice);
     }//GEN-LAST:event_compute_btnActionPerformed
 
     private void CLEARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLEARActionPerformed
