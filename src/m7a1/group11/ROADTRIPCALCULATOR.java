@@ -53,7 +53,7 @@ public class ROADTRIPCALCULATOR extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         distance_txt = new javax.swing.JTextField();
         compute_btn = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        CLEAR = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         total_txt = new javax.swing.JTextField();
 
@@ -112,13 +112,13 @@ public class ROADTRIPCALCULATOR extends javax.swing.JFrame {
         });
         jPanel1.add(compute_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, -1, -1));
 
-        jButton1.setText("Clear");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        CLEAR.setText("Clear");
+        CLEAR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                CLEARActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 250, -1, -1));
+        jPanel1.add(CLEAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 250, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -164,9 +164,15 @@ public class ROADTRIPCALCULATOR extends javax.swing.JFrame {
         mileageComputation(mileage, fuelcost, distance, totalprice);
     }//GEN-LAST:event_compute_btnActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void CLEARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLEARActionPerformed
+        mileage_txt.setText(null);  
+        fuelcost_txt.setText(null); 
+        distance_txt.setText(null); 
+        total_txt.setText(null); 
+        travel_time.setText(null); 
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_CLEARActionPerformed
 
     private void travel_timeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_travel_timeActionPerformed
         // TODO add your handling code here:
@@ -212,10 +218,10 @@ public class ROADTRIPCALCULATOR extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CLEAR;
     private javax.swing.JButton compute_btn;
     public static javax.swing.JTextField distance_txt;
     public static javax.swing.JTextField fuelcost_txt;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
