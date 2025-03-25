@@ -139,6 +139,8 @@ public class ROADTRIPCALCULATOR extends javax.swing.JFrame {
         distance_txt.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(distance_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 190, -1));
 
+        compute_btn.setBackground(new java.awt.Color(94, 94, 94));
+        compute_btn.setForeground(new java.awt.Color(255, 255, 255));
         compute_btn.setText("Compute");
         compute_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,6 +149,8 @@ public class ROADTRIPCALCULATOR extends javax.swing.JFrame {
         });
         jPanel1.add(compute_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, -1, -1));
 
+        reset_txt.setBackground(new java.awt.Color(94, 94, 94));
+        reset_txt.setForeground(new java.awt.Color(255, 255, 255));
         reset_txt.setText("Reset");
         reset_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,6 +165,7 @@ public class ROADTRIPCALCULATOR extends javax.swing.JFrame {
         jLabel6.setText("REMINDER:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, -1, -1));
 
+        total.setEditable(false);
         total.setBackground(new java.awt.Color(49, 50, 51));
         total.setForeground(new java.awt.Color(255, 255, 255));
         total.setText("0");
@@ -239,18 +244,24 @@ public class ROADTRIPCALCULATOR extends javax.swing.JFrame {
 
     private void compute_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compute_btnActionPerformed
         // TODO add your handling code here:
-        double mileage = Double.valueOf(mileage_txt.getText());
-        double fuelcost = Double.valueOf(fuelcost_txt.getText());
-        double distance = Double.valueOf(distance_txt.getText());
-        double totalprice = Double.valueOf(total.getText());
+        try {
         
-        if (computed == false) {
-            fuelcostComputation(mileage, fuelcost, distance, totalprice); // Method for fuel computation
-            double totalpriceAgain = Double.valueOf(total.getText());
-            travelCosts(mileage, distance, totalpriceAgain); // Method for travel costs such as food and hotel.
-            double traveltime = Double.valueOf(travel_time.getText());
-            travelTime(traveltime); // Converts minutes into hours
-            computed = true;
+            double mileage = Double.valueOf(mileage_txt.getText());
+            double fuelcost = Double.valueOf(fuelcost_txt.getText());
+            double distance = Double.valueOf(distance_txt.getText());
+            double totalprice = Double.valueOf(total.getText());
+
+            if (computed == false) {
+                fuelcostComputation(mileage, fuelcost, distance, totalprice); // Method for fuel computation
+                double totalpriceAgain = Double.valueOf(total.getText());
+                travelCosts(mileage, distance, totalpriceAgain); // Method for travel costs such as food and hotel.
+                double traveltime = Double.valueOf(travel_time.getText());
+                travelTime(traveltime); // Converts minutes into hours
+                computed = true;
+            }
+        } catch (Exception e) {
+            System.out.println("The user didn't input anything...");
+            // mostly here to stop the console from throwing a tantrum lmao
         }
     }//GEN-LAST:event_compute_btnActionPerformed
 
